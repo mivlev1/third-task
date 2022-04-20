@@ -47,7 +47,7 @@ if (empty($_POST['select'])) {
 if (empty($_POST['check'])) {
     print('Вы не согласны с пользовательским соглашением.<br/>');
     $errors = TRUE;
-
+}
 // *************
 // Тут необходимо проверить правильность заполнения всех остальных полей.
 // *************
@@ -72,26 +72,4 @@ catch(PDOException $e) {
     print('Error : ' . $e->getMessage());
     exit();
 }
-?>
-//  stmt - это "дескриптор состояния".
-
-//  Именованные метки.
-//$stmt = $db->prepare("INSERT INTO test (label,color) VALUES (:label,:color)");
-//$stmt -> execute(array('label'=>'perfect', 'color'=>'green'));
-
-//Еще вариант
-/*$stmt = $db->prepare("INSERT INTO users (firstname, lastname, email) VALUES (:firstname, :lastname, :email)");
-$stmt->bindParam(':firstname', $firstname);
-$stmt->bindParam(':lastname', $lastname);
-$stmt->bindParam(':email', $email);
-$firstname = "John";
-$lastname = "Smith";
-$email = "john@test.com";
-$stmt->execute();
-*/
-
-// Делаем перенаправление.
-// Если запись не сохраняется, но ошибок не видно, то можно закомментировать эту строку чтобы увидеть ошибку.
-// Если ошибок при этом не видно, то необходимо настроить параметр display_errors для PHP.
-//header('Location: ?save=1');
 
