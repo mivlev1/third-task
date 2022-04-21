@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="my-form">
-    <form>
+    <form action=method="POST">
         <div class="row mb-3">
             <label for="inputName3" class="col-sm-2 col-form-label">Имя</label>
             <div class="col-sm-10">
@@ -27,7 +27,7 @@
         <div class="row mb-3">
             <label for="Date" class="col-sm-2 col-form-label">Дата</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" name="date" placeholder="Дата" required>
+                <input type="date" class="form-control" name="date" value="2012-12-12" placeholder="Дата" required>
             </div>
         </div>
         <fieldset>

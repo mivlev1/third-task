@@ -28,22 +28,7 @@ if (empty($_POST['email-field'])) {
     print('Заполните email.<br/>');
     $errors = TRUE;
 }
-if (empty($_POST['data'])) {
-    print('Заполните дату.<br/>');
-    $errors = TRUE;
-}
-/*if (empty($_POST['radio-gender'])) {
-    print('Выберите пол.<br/>');
-    $errors = TRUE;
-}
-if (empty($_POST['radio-kon'])) {
-    print('Выберите кол-во конечностей.<br/>');
-    $errors = TRUE;
-}
-if (empty($_POST['select'])) {
-    print('Выберите кол-во конечностей.<br/>');
-    $errors = TRUE;
-}*/
+
 if (empty($_POST['check'])) {
     print('Вы не согласны с пользовательским соглашением.<br/>');
     $errors = TRUE;
