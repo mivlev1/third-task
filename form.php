@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="my-form">
-    <form action=method="POST">
+    <form method="POST">
         <div class="row mb-3">
             <label for="inputName3" class="col-sm-2 col-form-label">Имя</label>
             <div class="col-sm-10">
