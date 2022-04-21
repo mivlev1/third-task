@@ -88,7 +88,7 @@
             <div class="col-form-label col-sm-2 pt-0">Пользовательское соглашение</div>
             <div class="col-sm-10">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="checkz" value="1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="checkz" value="1" checked="checked">
                     <label class="form-check-label" for="gridCheck1">
                         С условиями согласен
                     </label>
