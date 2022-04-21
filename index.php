@@ -78,7 +78,7 @@ try{
     $stmt = $db->prepare("INSERT INTO application SET name = ?, email=?, dat=?, gender=?, kon=?, checkz=?");
     $stmt -> execute([$_POST['name-field'], $_POST['email-field'], date('Y-m-d', strtotime($_POST['date'])), $_POST['radio-gender'], $_POST['radio-kon'], $_POST['ch']]);
     $stmt2 = $db->prepare("INSERT INTO super SET id = ?, power = ?");
-    $stmt2 = execute([$id,$power]);
+    $stmt2 -> execute([$id,$power]);
 }
 catch(PDOException $e) {
     print('Error : ' . $e->getMessage());
