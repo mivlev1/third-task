@@ -15,19 +15,19 @@
         <div class="row mb-3">
             <label for="inputName3" class="col-sm-2 col-form-label">Имя</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="name-field">
+                <input type="text" class="form-control" name="name-field">
             </div>
         </div>
         <div class="row mb-3">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="email-field">
+                <input type="email" class="form-control" name="email-field">
             </div>
         </div>
         <div class="row mb-3">
             <label for="Date" class="col-sm-2 col-form-label">Дата</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>
+                <input type="date" class="form-control" name="date" placeholder="Дата" required>
             </div>
         </div>
         <fieldset>
@@ -77,7 +77,7 @@
         <div class="row mb-3">
             <div class="col-sm-10">
                 <label class="form-check-label">Выберите суперспособность</label>
-                <select class="form-select" id="select" name="select[]" multiple>
+                <select class="form-select" name="power[]" multiple>
                     <option value="1">Бессмертие</option>
                     <option value="2">Левитация</option>
                     <option value="3">Сверхсила</option>
@@ -88,7 +88,7 @@
             <div class="col-form-label col-sm-2 pt-0">Пользовательское соглашение</div>
             <div class="col-sm-10">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="checkz">
                     <label class="form-check-label" for="gridCheck1">
                         С условиями согласен
                     </label>

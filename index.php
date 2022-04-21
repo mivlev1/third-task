@@ -57,6 +57,16 @@ if ($errors) {
     exit();
 }
 
+//Объявляем переменные
+$id=rand(0,999);
+$name = $_POST['name-field'];
+$email = $_POST['email-field'];
+$dat = $_POST['date'];
+$gender = $_POST['radio-gender'];
+$kon = $_POST['radio-kon'];
+$checkz = $_POST['checkz'];
+
+$power = implode(",",$_POST['power']);
 // Сохранение в базу данных.
 
 $user = 'u41731';
@@ -65,8 +75,10 @@ $db = new PDO('mysql:host=localhost;dbname=u41731', $user, $pass, array(PDO::ATT
 
 // Подготовленный запрос. Не именованные метки.
 try{
-    $stmt = $db->prepare("INSERT INTO application (name) SET name = ?");
-    $stmt -> execute(array('name-field'));
+    $stmt = $db->prepare("INSERT INTO application SET name = ?, email=?, dat=?, gender=?, kon=?, checkz=?");
+    $stmt -> execute([$_POST['name-field'], $_POST['email-field'], date('Y-m-d', strtotime($_POST['date'])), $_POST['radio-gender'], $_POST['radio-kon'], $_POST['ch']]);
+    $stmt2 = $db->prepare("INSERT INTO super SET id = ?, power = ?");
+    $stmt2 = execute([$id,$power]);
 }
 catch(PDOException $e) {
     print('Error : ' . $e->getMessage());
