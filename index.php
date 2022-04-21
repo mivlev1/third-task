@@ -29,7 +29,7 @@ if (empty($_POST['email-field'])) {
     $errors = TRUE;
 }
 
-if (empty($_POST['check'])) {
+if (empty($_POST['checkz'])) {
     print('Вы не согласны с пользовательским соглашением.<br/>');
     $errors = TRUE;
 }
