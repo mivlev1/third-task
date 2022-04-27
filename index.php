@@ -65,7 +65,7 @@ try{
     $stmt -> execute([$_POST['name-field'], $_POST['email-field'], date('Y-m-d', strtotime($_POST['date'])), $_POST['radio-gender'], $_POST['radio-kon'], $_POST['checkz']]);
     //$stmt -> execute([$id,$name, $email, $dat, $gender, $kon, $checkz]);
     $id = $db->lastInsertId();
-    $stmt2 = $db->prepare("INSERT INTO id,power SET power = ?");
+    $stmt2 = $db->prepare("INSERT INTO power SET id=?,power = ?");
     $stmt2 -> execute([$id,$power]);
 
     echo "Запись добавлена под номером:" . $id;
