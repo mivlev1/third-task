@@ -62,7 +62,7 @@ $id = $db->lastInsertId();
 try{
     $stmt = $db->prepare("INSERT INTO application SET id=? name = ?, email=?, dat=?, gender=?, kon=?, checkz=?");
     //$stmt -> execute([$_POST['name-field'], $_POST['email-field'], date('Y-m-d', strtotime($_POST['date'])), $_POST['radio-gender'], $_POST['radio-kon'], $_POST['checkz']]);
-    $stmt -> execute([$name, $email, $dat, $gender, $kon, $checkz]);
+    $stmt -> execute([$id,$name, $email, $dat, $gender, $kon, $checkz]);
     $stmt2 = $db->prepare("INSERT INTO power SET id = ?, power = ?");
     $stmt2 -> execute([$id,$power]);
 }
