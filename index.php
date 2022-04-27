@@ -63,10 +63,10 @@ $db = new PDO('mysql:host=localhost;dbname=u41731', $user, $pass, array(PDO::ATT
 try{
     $stmt = $db->prepare("INSERT INTO application SET name = ?, email=?, dat=?, gender=?, kon=?, checkz=?");
 
-    $stmt -> execute([$id, $_POST['name-field'], $_POST['email-field'], date('Y-m-d', strtotime($_POST['date'])), $_POST['radio-gender'], $_POST['radio-kon'], $_POST['checkz']]);
+    $stmt -> execute([$_POST['name-field'], $_POST['email-field'], date('Y-m-d', strtotime($_POST['date'])), $_POST['radio-gender'], $_POST['radio-kon'], $_POST['checkz']]);
     //$stmt -> execute([$id,$name, $email, $dat, $gender, $kon, $checkz]);
     $stmt2 = $db->prepare("INSERT INTO power SET power = ?");
-    $stmt2 -> execute([$id,$power]);
+    $stmt2 -> execute([$power]);
     $id = $db->lastInsertId();
     echo "Запись добавлена под номером:" . $id;
 }
