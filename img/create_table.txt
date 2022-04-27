@@ -1,0 +1,17 @@
+CREATE TABLE application (
+  id int(10) unsigned NOT NULL AUTO_INCREMENT,
+  name varchar(128) NOT NULL DEFAULT '',
+  email varchar(128) NOT NULL UNIQUE,
+  dat DATE NOT NULL DEFAULT 0,
+  gender varchar(6) NOT NULL DEFAULT '',
+  kon int(5) NOT NULL,
+  checkz int(6) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+
+CREATE TABLE power (
+  id int(10) unsigned NOT NULL,
+  power varchar(128) NOT NULL,
+  FOREIGN KEY (id) REFERENCES application (id)
+);
