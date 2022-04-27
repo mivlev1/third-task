@@ -65,6 +65,7 @@ try{
     //$stmt -> execute([$id,$name, $email, $dat, $gender, $kon, $checkz]);
     $stmt2 = $db->prepare("INSERT INTO power SET id = ?, power = ?");
     $stmt2 -> execute([$id,$power]);
+    echo "Запись добавлена под номером:" . $id;
 }
 catch(PDOException $e) {
     print('Error : ' . $e->getMessage());
