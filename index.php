@@ -43,7 +43,7 @@ if ($errors) {
 }
 
 //Объявляем переменные
-$id=rand(0,999);
+
 $name = $_POST['name-field'];
 $email = $_POST['email-field'];
 $dat = $_POST['date'];
@@ -57,10 +57,10 @@ $power = implode(",",$_POST['power']);
 $user = 'u41731';
 $pass = '7439940';
 $db = new PDO('mysql:host=localhost;dbname=u41731', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
-
+$id = $db->lastInsertId();
 // Подготовленный запрос. Не именованные метки.
 try{
-    $stmt = $db->prepare("INSERT INTO application SET name = ?, email=?, dat=?, gender=?, kon=?, checkz=?");
+    $stmt = $db->prepare("INSERT INTO application SET id=? name = ?, email=?, dat=?, gender=?, kon=?, checkz=?");
     $stmt -> execute([$_POST['name-field'], $_POST['email-field'], date('Y-m-d', strtotime($_POST['date'])), $_POST['radio-gender'], $_POST['radio-kon'], $_POST['checkz']]);
     $stmt2 = $db->prepare("INSERT INTO super SET id = ?, power = ?");
     $stmt2 -> execute([$id,$power]);
