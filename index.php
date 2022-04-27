@@ -51,20 +51,23 @@ $gender = $_POST['radio-gender'];
 $kon = $_POST['radio-kon'];
 $checkz = $_POST['checkz'];
 
+//объединяем данные в строку
 $power = implode(",",$_POST['power']);
 // Сохранение в базу данных.
 
 $user = 'u41731';
 $pass = '7439940';
 $db = new PDO('mysql:host=localhost;dbname=u41731', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
-$id = $db->lastInsertId();
+
 // Подготовленный запрос. Не именованные метки.
 try{
-    $stmt = $db->prepare("INSERT INTO application SET id=?, name = ?, email=?, dat=?, gender=?, kon=?, checkz=?");
+    $stmt = $db->prepare("INSERT INTO application SET name = ?, email=?, dat=?, gender=?, kon=?, checkz=?");
+
     $stmt -> execute([$id, $_POST['name-field'], $_POST['email-field'], date('Y-m-d', strtotime($_POST['date'])), $_POST['radio-gender'], $_POST['radio-kon'], $_POST['checkz']]);
     //$stmt -> execute([$id,$name, $email, $dat, $gender, $kon, $checkz]);
-    $stmt2 = $db->prepare("INSERT INTO power SET id = ?, power = ?");
+    $stmt2 = $db->prepare("INSERT INTO power SET power = ?");
     $stmt2 -> execute([$id,$power]);
+    $id = $db->lastInsertId();
     echo "Запись добавлена под номером:" . $id;
 }
 catch(PDOException $e) {
